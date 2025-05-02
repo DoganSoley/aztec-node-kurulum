@@ -6,13 +6,13 @@ ufw allow 22
 ufw allow ssh
 ufw allow 40400
 ufw allow 8080
-ufw enable
+echo "y" | ufw enable
 
 # 7. Kullanıcıdan veri alma
-read -p "🔗 L1 RPC URL'nizi girin: " RPC_URL
-read -p "🔑 Metamask özel anahtarınızı girin: " PRIVATE_KEY
-read -p "📬 Metamask public adresinizi girin: " COINBASE
-read -p "🌐 Sunucu dış IP adresinizi girin: " IP_ADDR
+read -p "🔗 Sepolia RPC girin: " RPC_URL
+read -p "🔑 Metamask özel anahtarını girin: " PRIVATE_KEY
+read -p "📬 Metamask cüzdan adresini girin: " COINBASE
+read -p "🌐 Sunucu ip adresini girin: " IP_ADDR
 
 # 8. Aztec node başlatma komutu
 START_COMMAND="aztec start --node --archiver --sequencer \
@@ -26,6 +26,24 @@ START_COMMAND="aztec start --node --archiver --sequencer \
 # 9. Screen içinde başlat
 screen -dmS aztec bash -c "$START_COMMAND"
 
+echo " "
+echo " "
+echo " "
+echo -e "${BLUE} ######  ########  ##    ## ########  ########  #######  ##        #######   ######   ######${NC}"
+echo -e "${BLUE}##    ## ##     ##  ##  ##  ##     ##    ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE}##       ##     ##   ####   ##     ##    ##    ##     ## ##       ##     ## ##       ##${NC}"
+echo -e "${BLUE}##       ########     ##    ########     ##    ##     ## ##       ##     ##  ######   ######${NC}"
+echo -e "${BLUE}##       ##   ##      ##    ##           ##    ##     ## ##       ##     ##       ##       ##${NC}"
+echo -e "${BLUE}##    ## ##    ##     ##    ##           ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE} ######  ##     ##    ##    ##           ##     #######  ########  #######   ######   ######${NC}"
+echo " "
+echo " "
+echo " "
+echo " "
+
 # 10. Bilgilendirme
 echo "✅ Aztec node 'aztec' isimli screen içinde başlatıldı."
-echo "🔍 İzlemek için: screen -r aztec"
+echo " "
+echo "🔍 Log kontrol için : screen -r aztec"
+echo " "
+echo "🔍 Sorularınız için : t.me/CryptolossChat telegram kanalına gelebilirsiniz.."
