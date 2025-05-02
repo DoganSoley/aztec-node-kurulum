@@ -30,6 +30,9 @@ echo "🧩 Aztec Sequencer Node Kurulumu Başlıyor"
 # 1. Sistem güncellemeleri
 sudo apt-get update && sudo apt-get upgrade -y
 
+# screen paketi kurulumu
+sudo apt install screen -y
+
 # 2. Gerekli paketlerin kurulumu
 sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 
