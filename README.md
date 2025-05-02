@@ -8,7 +8,7 @@
 
 RAM : 16GB
 
-CPU : 8 CORE (4-6'da olur fakat imkan varsa 8 olsun)
+CPU : 8 CORE (4-6'da olur fakat imkan varsa 8 olsun ve arm64 sunucularda çalışmıyor yani sunucunun amd64, Amd/Intel olduğundan emin olun)
 
 SSD : 100GB+
 
