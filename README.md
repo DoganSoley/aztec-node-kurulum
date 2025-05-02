@@ -115,6 +115,13 @@ Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer 
 
 İşlemler bu kadar.
 
+Eğerki node durursa aşağıdaki kodu screen içerisindeyken çalıştırın
+
+
+```
+wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/run-node.sh && chmod +x run-node.sh && ./run-node.sh
+```
+
 Thanks to [0xmoei](https://github.com/0xmoei/aztec-network)
 
 
