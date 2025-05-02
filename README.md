@@ -35,7 +35,7 @@ Eğer karşınıza "[Y/n]" çıkarsa "y" yazıp enterlayın veya aşağıdaki g�
 
 ![image](https://github.com/user-attachments/assets/a1bb0941-4d66-4a8b-9bc7-308572310266)
 
-Aşağıdaki yere geldiğinizde "y" tuşuna basın, sonrasında tekrar soracak tekrar "y" yazıp enterlayın.
+Aşağıdaki yere geldiğinizde "y" tuşuna basın, sonrasında tekrar soracak tekrar "y" yazıp enterlayın
 
 ![image](https://github.com/user-attachments/assets/5c70d387-b725-4638-a8b1-385819dab1a4)
 
@@ -53,16 +53,23 @@ Yükleme bittikten sonra sizden "Sepolia RPC" isteyecek, kayıt olduğumuz alche
 
 ![image](https://github.com/user-attachments/assets/c6dd0a5a-bc30-4d46-a208-7af771987a5b) 
 
-Sepolia'yı seçip RPC'yi kopyalayın ve terminale dönüp yapıştırıp enterlayın.
+Sepolia'yı seçip RPC'yi kopyalayın ve terminale dönüp yapıştırıp enterlayın
 
 ![image](https://github.com/user-attachments/assets/f1494a00-412a-4e67-8870-64e693f6921a)
 ![image](https://github.com/user-attachments/assets/ce12192a-f41c-448e-9582-fc3e749d2fb7)
 
-Sonrasında metamask özel anahtarınızı isteyecek onu da yapıştırıp enterlayın.
+Sonrasında metamask özel anahtarınızı isteyecek onu da yapıştırıp enterlayın
+
 ![image](https://github.com/user-attachments/assets/2001fc23-e9ba-4499-8a12-d9f2b28b4f57)
 
-Sonra metamask adresinizi isteyecek onu da yapıştırıp enterlayın.
+Sonra metamask adresinizi isteyecek onu da yapıştırıp enterlayın
+
 ![image](https://github.com/user-attachments/assets/d10cfae8-e1a1-447a-a9e2-49dd14a8f083)
+
+Son olarak sunucu ip adresinizi yazıp enterlayın
+
+![image](https://github.com/user-attachments/assets/fbe3c6c7-9b54-442c-a25c-74eaa626533a)
+
 
 
 
