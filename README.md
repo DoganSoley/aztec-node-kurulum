@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/b2fb2d70-c75a-4fe5-ae4a-0efbc28b3e45)
+
 # Aztec Sequencer Node Kurulumu
 
 # [Kurulum Videosu]() 
