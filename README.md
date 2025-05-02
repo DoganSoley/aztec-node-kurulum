@@ -68,7 +68,7 @@ Sonra metamask adresinizi isteyecek onu da yapıştırıp enterlayın
 
 Son olarak sunucu ip adresinizi yazıp enterlayın
 
-![image](https://github.com/user-attachments/assets/fbe3c6c7-9b54-442c-a25c-74eaa626533a)
+![image](https://github.com/user-attachments/assets/1a5f16cd-379b-4740-9d1b-9cef7a039d69)
 
 Screen'e girelim
 
