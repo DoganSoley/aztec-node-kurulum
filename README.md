@@ -35,6 +35,16 @@ Eğer karşınıza "[Y/n]" çıkarsa "y" yazıp enterlayın veya aşağıdaki g�
 
 ![image](https://github.com/user-attachments/assets/a1bb0941-4d66-4a8b-9bc7-308572310266)
 
+Aşağıdaki yere geldiğinizde "y" tuşuna basın, sonrasında tekrar soracak tekrar "y" yazıp enterlayın.
+
+![image](https://github.com/user-attachments/assets/5c70d387-b725-4638-a8b1-385819dab1a4)
+
+Yükleme bittikten sonra "exit" yazıp enterlayın ve sonra tekrar "exit" yazıp tekrar enterlayın sunucudan çıkın ve "ssh root@ip" ile sunucuya tekrar bağlanın.(sunucudan çıkıp tekrar geri giriyoruz)
+
+![image](https://github.com/user-attachments/assets/ea430ff9-f8c7-4e74-a45a-c4176dd7605f)
+
+
+
 
 
 
