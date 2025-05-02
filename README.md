@@ -97,6 +97,11 @@ Proof yazan yere aldığınız uzun çıktıyı yazıp enterlayın.
 
 ![image](https://github.com/user-attachments/assets/a2adec9c-171a-4c25-a2dc-d3318ea40ed5)
 
+Bu işlemi yaptıktan sonra "Apprentice" rolünü almış olmanız gerekiyor, isminizin üstüne tıklayarak kontrol edin
+
+![image](https://github.com/user-attachments/assets/b14bd8c4-3991-488d-8e22-b885789361e8)
+
+
 Son olarak da aşağıki kod ile validatör kaydı yapalım.
 
 ```
