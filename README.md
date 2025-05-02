@@ -70,7 +70,14 @@ Son olarak sunucu ip adresinizi yazıp enterlayın
 
 ![image](https://github.com/user-attachments/assets/fbe3c6c7-9b54-442c-a25c-74eaa626533a)
 
+Screen'e girelim
 
+```
+screen -r aztec
+```
+![image](https://github.com/user-attachments/assets/2a055eb6-53bd-46db-ba4c-9b63e59b2d1a)
+
+Biraz bekleyin ve loglar akmaya başlayınca " CTRL + A + D " ile screen'den çıkın.
 
 
 
