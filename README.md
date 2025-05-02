@@ -84,8 +84,17 @@ wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/
 ```
 Size verdiği bu uzun kodu bir yere kaydedin şimdi discord işlemlerini yapacağız
 
-![image](https://github.com/user-attachments/assets/da80a3fe-12d9-4f51-854b-a0dc18a10fd9)
+![image](https://github.com/user-attachments/assets/ed506ed1-f136-43e2-9bc8-454502715e11)
 
+Discord'da "operators|start-here" kanalına gidin ve "/operator start" yazın aşağıdaki görseldeki gibi doldurun.
+
+Adress kısmına metamask cüzdan adresinizi.
+
+Block-number yazan yere az önce yazdığınız kodun çıktısındaki son blok numarasını.
+
+Proof yazan yere aldığınız uzun çıktıyı yazıp enterlayın.
+
+![image](https://github.com/user-attachments/assets/cb8eef9d-917c-4162-a834-ae8a6d488c56)
 
 
 
