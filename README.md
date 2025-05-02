@@ -115,7 +115,7 @@ Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer 
 
 İşlemler bu kadar.
 
-Eğerki node durursa aşağıdaki kodu screen içerisindeyken çalıştırın
+Eğer node durursa aşağıdaki kodu screen içerisindeyken çalıştırın
 
 
 ```
