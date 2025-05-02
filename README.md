@@ -17,7 +17,7 @@ Ubuntu 22.04
 
 # Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
 
-İlk önce bir [Metamask](metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım.(ilk başta 0.1 ETH yeterli olur kurulumu yaptıktan sonra arada kazın 3-4 tane biriktirin lazım olabilir.)
+İlk önce bir [Metamask](https://metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım.(ilk başta 0.1 ETH yeterli olur kurulumu yaptıktan sonra arada kazın 3-4 tane biriktirin lazım olabilir.)
 
 Daha sonra [Alchemy](https://dashboard.alchemy.com/) sitesine kayıt olalım.
 
