@@ -17,7 +17,7 @@ Ubuntu 22.04
 
 # Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
 
-İlk önce bir [Metamask](metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım, 0.1 ETH kazsanız yeterli olur.
+İlk önce bir [Metamask](metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım.(ilk başta 0.1 ETH yeterli olur kurulumu yaptıktan sonra arada kazın 3-4 tane biriktirin lazım olabilir.)
 
 Daha sonra [Alchemy](https://dashboard.alchemy.com/) sitesine kayıt olalım.
 
@@ -103,7 +103,7 @@ wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/
 ```
 Yine aynı şekilde sizden istediği bilgileri girin.
 
-Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer günlük limit doluysa şu şekilde bir çıktı alırsınız, kayıt olana kadar birer gün arayla denersiniz.
+Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer günlük limit doluysa şu şekilde bir çıktı alırsınız, kayıt olana kadar birer gün arayla denersiniz.(Kayıt olurken gaz ücreti hatası vererek 2.3 ETH istemişti attım fakat yine kota doldu dedi, kayıt için ETH miktarını yüksek istiyor, cüzdanda fazla tutun)
 
 ![image](https://github.com/user-attachments/assets/85281adf-b28e-4dab-a8af-d6e03aa3dfeb)
 
