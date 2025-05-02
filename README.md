@@ -23,5 +23,17 @@ Daha sonra [Alchemy](https://dashboard.alchemy.com/) sitesine kayıt olalım.
 
 Sonrasında Aztec'in [Discord](https://discord.com/invite/aztec) kanalına girelim.
 
+# Node Kurulum Adımları
 
-# Kurulum Adımları
+Sunucuya bağlandıktan sonra aşağıdaki kodu yapıştırıp enterlayın.
+
+```
+wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/script.sh && chmod +x script.sh && ./script.sh
+```
+
+Eğer karşınıza "y/n" çıkarsa "y" yazıp enterlayın veya aşağıdaki görseldeki gibi birşey çıkarsa "TAB" tuşuna basarak "OK" yazısına gelin ve enterlayın bu aşamada karşınıza çıkan hepsine "OK" diyin.
+
+![image](https://github.com/user-attachments/assets/8816caca-642c-404f-bfdd-eabff7ef3c92)
+
+
+
