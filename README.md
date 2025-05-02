@@ -17,7 +17,7 @@ Ubuntu 22.04
 
 # Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
 
-İlk önce bir [Metamask](metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım.
+İlk önce bir [Metamask](metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım, 0.1 ETH kazsanız yeterli olur.
 
 Daha sonra [Alchemy](https://dashboard.alchemy.com/) sitesine kayıt olalım.
 
@@ -94,7 +94,17 @@ Block-number yazan yere az önce yazdığınız kodun çıktısındaki son blok 
 
 Proof yazan yere aldığınız uzun çıktıyı yazıp enterlayın.
 
-![image](https://github.com/user-attachments/assets/cb8eef9d-917c-4162-a834-ae8a6d488c56)
+![image](https://github.com/user-attachments/assets/a2adec9c-171a-4c25-a2dc-d3318ea40ed5)
+
+Son olarak da aşağıki kod ile validatör kaydı yapalım.
+
+```
+wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/validator.sh && chmod +x validator.sh && ./validator.sh
+```
+Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer günlük limit doluysa şu şekilde bir çıktı alırsınız, kayıt olana kadar birer gün arayla denersiniz.
+
+![image](https://github.com/user-attachments/assets/85281adf-b28e-4dab-a8af-d6e03aa3dfeb)
+
 
 
 
