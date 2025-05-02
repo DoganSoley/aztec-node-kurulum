@@ -51,7 +51,12 @@ wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/
 
 Yükleme bittikten sonra sizden "Sepolia RPC" isteyecek, kayıt olduğumuz alchemy sitesine gidip endpointe tıklayalım.("My Apps" kısmında birşey yoksa sağ tarafta "Create New App" yazıyor ona tıklayıp oluşturun)
 
-![image](https://github.com/user-attachments/assets/c6dd0a5a-bc30-4d46-a208-7af771987a5b)
+![image](https://github.com/user-attachments/assets/c6dd0a5a-bc30-4d46-a208-7af771987a5b) 
+
+Sepolia'yı seçip RPC'yi kopyalayın ve terminale dönüp yapıştırıp enterlayın.
+
+![image](https://github.com/user-attachments/assets/f1494a00-412a-4e67-8870-64e693f6921a)
+
 
 
 
