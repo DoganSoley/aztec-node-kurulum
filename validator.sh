@@ -25,7 +25,7 @@ OUTPUT=$(aztec add-l1-validator \
 if echo "$OUTPUT" | grep -q "ValidatorQuotaFilledUntil"; then
   echo -e "\n❌ Günlük validator kayıt kotası dolmuş olabilir, yarın tekrar dene."
 elif echo "$OUTPUT" | grep -q "insufficient funds"; then
-  echo -e "\n❌ Hesabında yeterli Sepolia ETH yok. Bu işlem için yaklaşık 2.3 Sepolia ETH gerekiyor."
+  echo -e "\n❌ Hesabında yeterli Sepolia ETH yok veya ücret hesaplamada problem de olabilir cüzdanında yeterli ETH varsa sonra dene."
 elif echo "$OUTPUT" | grep -q "Successfully added"; then
   echo -e "\n✅ Validator başarıyla kaydedildi."
 else
