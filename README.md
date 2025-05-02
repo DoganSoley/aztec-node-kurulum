@@ -115,7 +115,7 @@ Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer 
 
 İşlemler bu kadar.
 
-Thanks for [0xmoei](https://github.com/0xmoei/aztec-network)
+Thanks to [0xmoei](https://github.com/0xmoei/aztec-network)
 
 
 
