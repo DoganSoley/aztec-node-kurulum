@@ -2,7 +2,7 @@
 
 # Aztec Sequencer Node Kurulumu
 
-# [Kurulum Videosu]() 
+# [Kurulum Videosu](https://youtu.be/QIm5Jxg-TAk) 
 
 ## Sunucu Gereksinimleri
 
