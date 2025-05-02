@@ -86,7 +86,7 @@ Size verdiği bu uzun kodu bir yere kaydedin şimdi discord işlemlerini yapaca�
 
 ![image](https://github.com/user-attachments/assets/ed506ed1-f136-43e2-9bc8-454502715e11)
 
-Discord'da "operators|start-here" kanalına gidin ve "/operator start" yazın aşağıdaki görseldeki gibi doldurun.
+Discord'da [operators|start-here](https://discord.com/channels/1144692727120937080/1367196595866828982) kanalına gidin ve "/operator start" yazın aşağıdaki görseldeki gibi doldurun.
 
 Adress kısmına metamask cüzdan adresinizi.
 
