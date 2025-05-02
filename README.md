@@ -101,6 +101,8 @@ Son olarak da aşağıki kod ile validatör kaydı yapalım.
 ```
 wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/validator.sh && chmod +x validator.sh && ./validator.sh
 ```
+Yine aynı şekilde sizden istediği bilgileri girin.
+
 Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer günlük limit doluysa şu şekilde bir çıktı alırsınız, kayıt olana kadar birer gün arayla denersiniz.
 
 ![image](https://github.com/user-attachments/assets/85281adf-b28e-4dab-a8af-d6e03aa3dfeb)
