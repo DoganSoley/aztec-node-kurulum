@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "🛡️  Aztec Validator Kayıt Scripti"
+echo "🛡️  Aztec Validator Kayıt"
 
 # Kullanıcıdan bilgileri al
-read -p "🔗 L1 RPC URL'nizi girin: " RPC_URL
-read -p "🔐 Ethereum private key (validator): " PRIVATE_KEY
-read -p "📬 Validator Ethereum adresi: " VALIDATOR_ADDRESS
+read -p "🔗 Sepolia RPC girin: " RPC_URL
+read -p "🔐 Metamask özel anahtarını girin: " PRIVATE_KEY
+read -p "📬 Metamask cüzdan adresini girin: " VALIDATOR_ADDRESS
 
 # Sabit parametreler
 STAKING_HANDLER="0xF739D03e98e23A7B65940848aBA8921fF3bAc4b2"
@@ -23,7 +23,7 @@ OUTPUT=$(aztec add-l1-validator \
 
 # Quota hatası kontrolü
 if echo "$OUTPUT" | grep -q "ValidatorQuotaFilledUntil"; then
-  echo -e "\n❌ Günlük validator kayıt kotası dolmuş olabilir. Lütfen yarın tekrar dene."
+  echo -e "\n❌ Günlük validator kayıt kotası dolmuş olabilir, yarın tekrar dene."
 elif echo "$OUTPUT" | grep -q "Successfully added"; then
   echo -e "\n✅ Validator başarıyla kaydedildi."
 else
