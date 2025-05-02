@@ -23,7 +23,11 @@ echo " "
 echo " "
 echo " "
 
-# Aztec Sequencer Node Setup Script
+# Aztec Sequencer Node Setup Script (automated)
+
+# Tüm etkileşimli ekranları otomatik atla
+export DEBIAN_FRONTEND=noninteractive
+export NEEDRESTART_MODE=a
 
 echo "🧩 Aztec Sequencer Node Kurulumu Başlıyor"
 
@@ -34,16 +38,14 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 
 # 3. Docker kurulumu
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove -y $pkg; done
 
 sudo apt-get install ca-certificates curl gnupg -y
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-echo \  
-  "deb [arch=\"$(dpkg --print-architecture)\" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \"$(. /etc/os-release && echo \"$VERSION_CODENAME\")\" stable" | \  
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt update -y && sudo apt upgrade -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
@@ -68,10 +70,10 @@ ufw allow 8080
 ufw enable
 
 # 7. Kullanıcıdan veri alma
-read -p "🔗 Sepolia RPC girin: " RPC_URL
-read -p "🔑 Metamask özel anahtarını girin: " PRIVATE_KEY
-read -p "📬 Metamask adresini girin: " COINBASE
-read -p "🌐 Sunucu ip adresini girin: " IP_ADDR
+read -p "🔗 L1 RPC URL'nizi girin: " RPC_URL
+read -p "🔑 Metamask özel anahtarınızı girin: " PRIVATE_KEY
+read -p "📬 Metamask public adresinizi girin: " COINBASE
+read -p "🌐 Sunucu dış IP adresinizi girin: " IP_ADDR
 
 # 8. Aztec node başlatma komutu
 START_COMMAND="aztec start --node --archiver --sequencer \
