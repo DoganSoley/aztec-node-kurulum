@@ -25,10 +25,6 @@ echo " "
 
 # Aztec Sequencer Node Setup Script (automated)
 
-# Tüm etkileşimli ekranları otomatik atla
-export DEBIAN_FRONTEND=noninteractive
-export NEEDRESTART_MODE=a
-
 echo "🧩 Aztec Sequencer Node Kurulumu Başlıyor"
 
 # 1. Sistem güncellemeleri
@@ -64,4 +60,22 @@ sudo systemctl restart docker
 
 # 4. Aztec CLI kurulumu
 bash -i <(curl -s https://install.aztec.network)
+
+echo " "
+echo " "
+echo " "
+echo -e "${BLUE} ######  ########  ##    ## ########  ########  #######  ##        #######   ######   ######${NC}"
+echo -e "${BLUE}##    ## ##     ##  ##  ##  ##     ##    ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE}##       ##     ##   ####   ##     ##    ##    ##     ## ##       ##     ## ##       ##${NC}"
+echo -e "${BLUE}##       ########     ##    ########     ##    ##     ## ##       ##     ##  ######   ######${NC}"
+echo -e "${BLUE}##       ##   ##      ##    ##           ##    ##     ## ##       ##     ##       ##       ##${NC}"
+echo -e "${BLUE}##    ## ##    ##     ##    ##           ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE} ######  ##     ##    ##    ##           ##     #######  ########  #######   ######   ######${NC}"
+echo " "
+echo " "
+echo " "
+echo " "
+
+Sunucuya tekrar bağlanın..
+
 exit
