@@ -107,7 +107,9 @@ Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer 
 
 ![image](https://github.com/user-attachments/assets/85281adf-b28e-4dab-a8af-d6e03aa3dfeb)
 
+İşlemler bu kadar.
 
+Thanks for [0xmoei](https://github.com/0xmoei/aztec-network)
 
 
 
