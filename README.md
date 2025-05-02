@@ -56,6 +56,8 @@ Yükleme bittikten sonra sizden "Sepolia RPC" isteyecek, kayıt olduğumuz alche
 Sepolia'yı seçip RPC'yi kopyalayın ve terminale dönüp yapıştırıp enterlayın.
 
 ![image](https://github.com/user-attachments/assets/f1494a00-412a-4e67-8870-64e693f6921a)
+![image](https://github.com/user-attachments/assets/ce12192a-f41c-448e-9582-fc3e749d2fb7)
+
 
 
 
