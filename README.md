@@ -104,7 +104,7 @@ wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/
 ```
 Yine aynı şekilde sizden istediği bilgileri girin.
 
-Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer günlük limit doluysa şu şekilde bir çıktı alırsınız, kayıt olana kadar birer gün arayla denersiniz.(Kayıt olurken gaz ücreti hatası vererek 2.3 ETH istemişti attım fakat yine kota doldu dedi, kayıt için ETH miktarını yüksek istiyor, cüzdanda fazla tutun)
+Günlük belirli bir kayıt limiti olduğu için her zaman kayıt etmiyor eğer günlük limit doluysa şu şekilde bir çıktı alırsınız, kayıt olana kadar gün aşırı denersiniz.(Kayıt olurken gaz ücreti hatası vererek 2.3 ETH istemişti attım fakat yine kota doldu dedi, kayıt için ETH miktarını yüksek istiyor, cüzdanda fazla tutun)
 
 ![image](https://github.com/user-attachments/assets/85281adf-b28e-4dab-a8af-d6e03aa3dfeb)
 
