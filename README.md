@@ -31,9 +31,10 @@ Sunucuya bağlandıktan sonra aşağıdaki kodu yapıştırıp enterlayın.
 wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/script.sh && chmod +x script.sh && ./script.sh
 ```
 
-Eğer karşınıza "y/n" çıkarsa "y" yazıp enterlayın veya aşağıdaki görseldeki gibi birşey çıkarsa "TAB" tuşuna basarak "OK" yazısına gelin ve enterlayın bu aşamada karşınıza çıkan hepsine "OK" diyin.
+Eğer karşınıza "y/n" çıkarsa "y" yazıp enterlayın veya aşağıdaki görseldeki gibi birşey çıkarsa(çıkmayabilir) "TAB" tuşuna basarak "OK" yazısına gelin ve enterlayın, bu aşamada karşınıza çıkan hepsine "OK" diyin.
 
-![image](https://github.com/user-attachments/assets/8816caca-642c-404f-bfdd-eabff7ef3c92)
+![image](https://github.com/user-attachments/assets/a1bb0941-4d66-4a8b-9bc7-308572310266)
+
 
 
 
