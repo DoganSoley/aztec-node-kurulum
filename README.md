@@ -8,7 +8,7 @@
 
 RAM : 16GB
 
-CPU : 8 CORE (4'de oluyor fakat imkan varsa 8 olsun)
+CPU : 8 CORE (4-6'da olur fakat imkan varsa 8 olsun)
 
 SSD : 100GB+
 
