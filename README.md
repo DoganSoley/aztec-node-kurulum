@@ -122,6 +122,16 @@ Eğer node durursa aşağıdaki kodu screen içerisindeyken çalıştırın
 wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/run-node.sh && chmod +x run-node.sh && ./run-node.sh
 ```
 
+Eğerki güncelleme gelirse "screen -r aztec" ile screen içerisine girip "ctrl+c" ile durdurun daha sonra sırasıyla aşağıdaki kodları girip yine screen içerisindeyken çalıştırma kodunu girin.
+
+```
+rm -rf ~/.aztec/alpha-testnet/data
+```
+```
+aztec-up alpha-testnet
+```
+
+
 Thanks to [0xmoei](https://github.com/0xmoei/aztec-network)
 
 
