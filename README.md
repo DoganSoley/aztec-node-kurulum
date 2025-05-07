@@ -77,7 +77,7 @@ Screen'e girelim
 screen -r aztec
 ```
 
-Bu adımda screen açılmıyorsa "There is no screen to be resumed." yazıyorsa aşağıdaki 2 kodu girin.(screen açılırsa bu adımı atlayın.)
+> Bu adımda screen açılmıyorsa "There is no screen to be resumed." yazıyorsa aşağıdaki 2 kodu girin.(screen açılırsa bu adımı atlayın.)
 
 ```
 screen -S aztec
