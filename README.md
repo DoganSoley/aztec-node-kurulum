@@ -85,7 +85,7 @@ screen -S aztec
 ```
 wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/run-node.sh && chmod +x run-node.sh && ./run-node.sh
 ```
-
+<
 ![image](https://github.com/user-attachments/assets/2a055eb6-53bd-46db-ba4c-9b63e59b2d1a)
 
 Biraz bekleyin ve loglar akmaya başlayınca " CTRL + A + D " ile screen'den çıkın ve aşağıdaki kodu girin
