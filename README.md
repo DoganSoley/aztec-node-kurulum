@@ -74,7 +74,7 @@ screen -r aztec
 Biraz bekleyin ve loglar akmaya başlayınca " CTRL + A + D " ile screen'den çıkın ve aşağıdaki kodu girin
 
 ```
-wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/base64.sh && chmod +x base64.sh && ./base64.sh
+bash ~/base64.sh
 ```
 Size verdiği bu uzun kodu bir yere kaydedin şimdi discord işlemlerini yapacağız
 
