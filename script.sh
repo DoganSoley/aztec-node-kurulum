@@ -100,7 +100,7 @@ fi
 echo "🔄 Aztec güncel versiyon yükleniyor.."
 aztec-up alpha-testnet
 
-echo -e "\n🌐 RPC Çökmemesi için 3 tane farklı RPC kullanabilirsiniz(Eğer ücretli RPC kullanıyorsanız sadece 1.ye girerek diğerlerini enter'a tıklayarak boş geçebilirsiniz):"
+echo -e "\n🌐 RPC Çökmemesi için 3 tane farklı RPC kullanabilirsiniz (Eğer ücretli RPC kullanıyorsanız sadece 1.ye girip diğerlerini boş bırakabilirsiniz):"
 read -p "1. Sepolia RPC: " RPC1
 read -p "2. Sepolia RPC: " RPC2
 read -p "3. Sepolia RPC: " RPC3
@@ -117,19 +117,17 @@ fi
 read -p "👛 Metamask cüzdan adresini girin: " COINBASE
 read -p "🌍 Sunucu ip adresini girin: " P2P_IP
 
-L1_CONSENSUS_HOST_URLS="https://eth-beacon-chain-sepolia.drpc.org/rest/"
+# Beacon RPC kullanıcıdan isteğe bağlı alınır
+read -p "🛰️ Beacon RPC girin (boş bırakırsanız varsayılan kullanılacak): " CUSTOM_BEACON_RPC
 
-echo "🧱 Node "aztec" screen içerisinde başlatılıyor.."
+if [[ -z "$CUSTOM_BEACON_RPC" ]]; then
+  L1_CONSENSUS_HOST_URLS="https://eth-beacon-chain-sepolia.drpc.org/rest/"
+  echo "ℹ️ Varsayılan Beacon RPC kullanılacak: $L1_CONSENSUS_HOST_URLS"
+else
+  L1_CONSENSUS_HOST_URLS="$CUSTOM_BEACON_RPC"
+  echo "✅ Beacon RPC olarak şu kullanılacak: $L1_CONSENSUS_HOST_URLS"
+fi
 
-screen -dmS aztec bash -c "
-aztec start --node --archiver --sequencer \
-  --network alpha-testnet \
-  --l1-rpc-urls \"$ETHEREUM_HOSTS\" \
-  --l1-consensus-host-urls \"$L1_CONSENSUS_HOST_URLS\" \
-  --sequencer.validatorPrivateKey \"$VALIDATOR_PRIVATE_KEY\" \
-  --sequencer.coinbase \"$COINBASE\" \
-  --p2p.p2pIp \"$P2P_IP\" | tee ~/aztec-log.txt
-"
 
 # --------------------------
 # VALIDATOR SCRIPT İNDİRME
