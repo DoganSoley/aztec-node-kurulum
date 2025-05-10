@@ -112,7 +112,7 @@ Eğer node durursa aşağıdaki kodu screen içerisindeyken çalıştırın
 
 
 ```
-wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/run-node.sh && chmod +x run-node.sh && ./run-node.sh
+bash ~/run-node.sh
 ```
 
 Eğerki güncelleme gelirse "screen -r aztec" ile screen içerisine girip "ctrl+c" ile durdurun daha sonra sırasıyla aşağıdaki kodları girip yine screen içerisindeyken çalıştırma kodunu girin.
