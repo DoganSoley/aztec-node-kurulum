@@ -39,16 +39,6 @@ Aşağıdaki yere geldiğinizde "y" tuşuna basın, sonrasında tekrar soracak t
 
 ![image](https://github.com/user-attachments/assets/5c70d387-b725-4638-a8b1-385819dab1a4)
 
-Yükleme bittikten sonra "exit" yazıp enterlayın ve sonra tekrar "exit" yazıp tekrar enterlayın sunucudan çıkın ve "ssh root@ip" ile sunucuya tekrar bağlanın.(sunucudan çıkıp tekrar geri giriyoruz)
-
-![image](https://github.com/user-attachments/assets/ea430ff9-f8c7-4e74-a45a-c4176dd7605f)
-
-Sunucuya tekrar bağlandıktan sonra aşağıdaki kodu yazıp enterlayın
-
-```
-wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/script2.sh && chmod +x script2.sh && ./script2.sh
-```
-
 Yükleme bittikten sonra sizden "Sepolia RPC" isteyecek, kayıt olduğumuz alchemy sitesine gidip endpointe tıklayalım.("My Apps" kısmında birşey yoksa sağ tarafta "Create New App" yazıyor ona tıklayıp oluşturun)
 
 ![image](https://github.com/user-attachments/assets/c6dd0a5a-bc30-4d46-a208-7af771987a5b) 
