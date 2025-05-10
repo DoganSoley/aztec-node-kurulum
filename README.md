@@ -96,7 +96,7 @@ Bu işlemi yaptıktan sonra "Apprentice" rolünü almış olmanız gerekiyor, is
 Son olarak da aşağıki kod ile validatör kaydı yapalım.
 
 ```
-wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/validator.sh && chmod +x validator.sh && ./validator.sh
+bash ~/validator.sh
 ```
 Yine aynı şekilde sizden istediği bilgileri girin.
 
