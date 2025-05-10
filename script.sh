@@ -144,6 +144,21 @@ else
   echo -e "${RED}❌ base64.sh dosyası indirilemedi. Bağlantıyı kontrol edin.${NC}"
 fi
 
+# --------------------------
+# NODE YENİDEN BAŞLATMA SCRIPTİ
+# --------------------------
+
+echo "📥 Node yeniden başlatma scripti indiriliyor..."
+wget -O ~/run-node.sh https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/run-node.sh
+
+if [[ -f ~/run-node.sh ]]; then
+  chmod +x ~/run-node.sh
+  echo "✅ run-node.sh başarıyla indirildi ve çalıştırılabilir hale getirildi."
+else
+  echo -e "${RED}❌ run-node.sh dosyası indirilemedi. Bağlantıyı kontrol edin.${NC}"
+fi
+
+
 
 
 echo " "
