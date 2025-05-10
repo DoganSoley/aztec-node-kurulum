@@ -41,7 +41,7 @@ Aşağıdaki yere geldiğinizde "y" tuşuna basın, sonrasında tekrar soracak t
 
 ![image](https://github.com/user-attachments/assets/5c70d387-b725-4638-a8b1-385819dab1a4)
 
-Yükleme sırasında aşağıdaki gibi bir ekran veya herhangi bir hata gelirse sunucudan çıkıp tekar geri bağlanın ve bu kodu girin ;
+Bu adımda Sepolia RPC istemek yerine aşağıdaki gibi bir ekran veya herhangi bir hata gelirse sunucudan çıkıp tekar geri bağlanın ve bu kodu girin ; (eğer kuruluma devam ederse burayı atlayın )
 
 ```
 bash ~/script.sh
