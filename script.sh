@@ -82,6 +82,12 @@ bash -i <(curl -s https://install.aztec.network)
 echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
+# PATH'e aztec bin klasörü ekleniyor (kalıcı)
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.profile
+export PATH="$HOME/.aztec/bin:$PATH"
+
+
 echo "🔄 Aztec güncel versiyon yükleniyor.."
 aztec-up alpha-testnet
 
