@@ -23,43 +23,116 @@ echo " "
 echo " "
 echo " "
 
-# Aztec Sequencer Node Setup Script (automated)
+# --------------------------
+# SİSTEM GÜNCELLEMELERİ VE GEREKLİ PAKETLER
+# --------------------------
 
-echo "🧩 Aztec Sequencer Node Kurulumu Başlıyor"
+echo "🚀 Sistem güncelleniyor ve temel bağımlılıklar yükleniyor..."
+apt-get update && apt-get upgrade -y
 
-# 1. Sistem güncellemeleri
-sudo apt-get update && sudo apt-get upgrade -y
+echo "📦 Gerekli tüm paketler yükleniyor..."
+apt-get install -y \
+  curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf \
+  tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang \
+  bsdmainutils ncdu unzip libleveldb-dev screen ca-certificates gnupg lsb-release \
+  software-properties-common apt-transport-https
 
-# screen paketi kurulumu
-sudo apt install screen -y
+# --------------------------
+# VARSA ESKİ DOCKER KURULUMLARINI TEMİZLE
+# --------------------------
 
-# 2. Gerekli paketlerin kurulumu
-sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
+echo "🧹 Önceki Docker sürümleri kaldırılıyor (varsa)..."
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
+  apt-get remove -y $pkg
+done
 
-# 3. Docker kurulumu
-sudo apt update -y && sudo apt upgrade -y
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+# --------------------------
+# RESMİ DOCKER KURULUMU
+# --------------------------
 
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo "🐳 Resmi Docker deposu ayarlanıyor..."
+
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+  | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+chmod a+r /etc/apt/keyrings/docker.gpg
 
 echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
+  > /etc/apt/sources.list.d/docker.list
 
-sudo apt update -y && sudo apt upgrade -y
+apt-get update -y && apt-get upgrade -y
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Test Docker
-sudo docker run hello-world
+# --------------------------
+# DOCKER TEST
+# --------------------------
 
-sudo systemctl enable docker
-sudo systemctl restart docker
+echo "✅ Docker kurulumu test ediliyor..."
+docker run hello-world
 
-# 4. Aztec CLI kurulumu
+systemctl enable docker
+systemctl restart docker
+
+echo "⬇️ Aztec CLI Yükleniyor.."
 bash -i <(curl -s https://install.aztec.network)
+
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+echo "🔄 Aztec güncel versiyon yükleniyor.."
+aztec-up alpha-testnet
+
+echo -e "\n🌐 RPC Çökmemesi için 3 tane farklı RPC kullanabilirsiniz(Eğer ücretli RPC kullanıyorsanız sadece 1.ye girerek diğerlerini enter'a tıklayarak boş geçebilirsiniz):"
+read -p "1. Sepolia RPC: " RPC1
+read -p "2. Sepolia RPC: " RPC2
+read -p "3. Sepolia RPC: " RPC3
+
+ETHEREUM_HOSTS=$(printf "%s\n%s\n%s\n" "$RPC1" "$RPC2" "$RPC3" | awk NF | paste -sd, -)
+
+read -p "🔑 Metamask özel anahtarını girin: " RAW_KEY
+if [[ "$RAW_KEY" == 0x* ]]; then
+  VALIDATOR_PRIVATE_KEY="$RAW_KEY"
+else
+  VALIDATOR_PRIVATE_KEY="0x$RAW_KEY"
+fi
+
+read -p "👛 Metamask cüzdan adresini girin: " COINBASE
+read -p "🌍 Sunucu ip adresini girin: " P2P_IP
+
+L1_CONSENSUS_HOST_URLS="https://eth-beacon-chain-sepolia.drpc.org/rest/"
+
+echo "🧱 Node "aztec" screen içerisinde başlatılıyor.."
+
+screen -dmS aztec bash -c "
+aztec start --node --archiver --sequencer \
+  --network alpha-testnet \
+  --l1-rpc-urls \"$ETHEREUM_HOSTS\" \
+  --l1-consensus-host-urls \"$L1_CONSENSUS_HOST_URLS\" \
+  --sequencer.validatorPrivateKey \"$VALIDATOR_PRIVATE_KEY\" \
+  --sequencer.coinbase \"$COINBASE\" \
+  --p2p.p2pIp \"$P2P_IP\" | tee ~/aztec-log.txt
+"
+
+echo " "
+echo " "
+echo " "
+echo -e "${BLUE} ######  ########  ##    ## ########  ########  #######  ##        #######   ######   ######${NC}"
+echo -e "${BLUE}##    ## ##     ##  ##  ##  ##     ##    ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE}##       ##     ##   ####   ##     ##    ##    ##     ## ##       ##     ## ##       ##${NC}"
+echo -e "${BLUE}##       ########     ##    ########     ##    ##     ## ##       ##     ##  ######   ######${NC}"
+echo -e "${BLUE}##       ##   ##      ##    ##           ##    ##     ## ##       ##     ##       ##       ##${NC}"
+echo -e "${BLUE}##    ## ##    ##     ##    ##           ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE} ######  ##     ##    ##    ##           ##     #######  ########  #######   ######   ######${NC}"
+echo " "
+echo " "
+echo " "
+echo " "
+
+echo "✅ Aztec node 'aztec' isimli screen içinde başlatıldı."
+echo " "
+echo "🔍 Log kontrol için : screen -r aztec"
+echo " "
+echo "🔍 Sorularınız için : t.me/CryptolossChat telegram kanalına gelebilirsiniz.."
