@@ -10,8 +10,8 @@ NC='\033[0m'
 echo -e "${BLUE}🛡️  Aztec Validator Kayıt İşlemi Başlatılıyor${NC}"
 
 # Bilgi al
-read -p "🌐 Sepolia RPC bağlantı adresinizi girin: " RPC_URL
-read -p "🔐 Metamask özel anahtarınızı girin (0x ile başlayabilir veya başlamayabilir): " RAW_KEY
+read -p "🌐 Sepolia RPC girin: " RPC_URL
+read -p "🔐 Metamask özel anahtarınızı girin: " RAW_KEY
 read -p "📬 Metamask cüzdan adresinizi girin: " VALIDATOR_ADDRESS
 
 # Private key formatla
@@ -58,7 +58,7 @@ if echo "$OUTPUT" | grep -q "ValidatorQuotaFilledUntil"; then
 
 # RPC limiti hatası
 elif echo "$OUTPUT" | grep -qi "Monthly capacity limit exceeded"; then
-  echo -e "${RED}⛔ RPC sağlayıcınızın aylık kullanım limiti dolmuş.${NC}"
+  echo -e "${RED}⛔ RPC sağlayıcınızın kullanım limiti dolmuş.${NC}"
   echo -e "🔄 Lütfen farklı bir RPC ile tekrar deneyin."
 
 # ✅ GERÇEK başarı kontrolü
