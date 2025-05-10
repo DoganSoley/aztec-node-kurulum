@@ -14,8 +14,9 @@ SSD : 100GB+
 
 Ubuntu 22.04
 
-## ÖNEMLİ ! Videodan sonra bazı değişiklikler oldu videodan farklı giden yerlerde lütfen rehberi okuyarak takip edin !
-# Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
+# ÖNEMLİ ! Videodan sonra bazı değişiklikler oldu videodan farklı giden yerlerde lütfen rehberi okuyarak takip edin !
+
+## Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
 
 
 İlk önce bir [Metamask](https://metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım.(ilk başta 0.1 ETH yeterli olur kurulumu yaptıktan sonra arada kazın 3-4 tane biriktirin lazım olabilir.)
