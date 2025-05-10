@@ -53,6 +53,9 @@ Sepolia'yı seçip RPC'yi kopyalayın ve terminale dönüp yapıştırıp enterl
 
 Sonrasında metamask özel anahtarınızı isteyecek onu da yapıştırıp enterlayın
 
+![image](https://github.com/user-attachments/assets/aa8e27e4-b691-4fb8-9b95-d06235fb529e)
+
+
 Sonra metamask adresinizi isteyecek onu da yapıştırıp enterlayın
 
 ![image](https://github.com/user-attachments/assets/d10cfae8-e1a1-447a-a9e2-49dd14a8f083)
