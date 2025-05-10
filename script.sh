@@ -126,10 +126,24 @@ wget -O ~/validator.sh https://raw.githubusercontent.com/DoganSoley/aztec-node-k
 if [[ -f ~/validator.sh ]]; then
   chmod +x ~/validator.sh
   echo "✅ validator.sh başarıyla indirildi ve çalıştırılabilir hale getirildi."
-  echo "📌 Çalıştırmak için: ${YELLOW}bash ~/validator.sh${NC}"
 else
   echo -e "${RED}❌ validator.sh dosyası indirilemedi. Bağlantıyı kontrol edin.${NC}"
 fi
+
+# --------------------------
+# BASE64 SCRIPT İNDİRME
+# --------------------------
+
+echo "📥 Base64 yardımcı scripti indiriliyor..."
+wget -O ~/base64.sh https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/base64.sh
+
+if [[ -f ~/base64.sh ]]; then
+  chmod +x ~/base64.sh
+  echo "✅ base64.sh başarıyla indirildi ve çalıştırılabilir hale getirildi."
+else
+  echo -e "${RED}❌ base64.sh dosyası indirilemedi. Bağlantıyı kontrol edin.${NC}"
+fi
+
 
 
 echo " "
