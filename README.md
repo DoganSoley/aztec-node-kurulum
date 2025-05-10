@@ -19,7 +19,7 @@ Ubuntu 22.04
 
 İlk önce bir [Metamask](https://metamask.io) cüzdanı oluşturalım ve sepolia test ağında ETH [Faucet](https://sepolia-faucet.pk910.de/) alalım.(ilk başta 0.1 ETH yeterli olur kurulumu yaptıktan sonra arada kazın 3-4 tane biriktirin lazım olabilir.)
 
-Daha sonra [Alchemy](https://dashboard.alchemy.com/) sitesine kayıt olalım.
+Daha sonra [Alchemy](https://dashboard.alchemy.com/) , [Infura](http://infura.io/) ve [Quicknode](https://www.quicknode.com/) sitesine kayıt olup 3'ünden de Sepolia RPC alalım.
 
 Sonrasında Aztec'in [Discord](https://discord.com/invite/aztec) kanalına girelim.
 
@@ -39,7 +39,7 @@ Aşağıdaki yere geldiğinizde "y" tuşuna basın, sonrasında tekrar soracak t
 
 ![image](https://github.com/user-attachments/assets/5c70d387-b725-4638-a8b1-385819dab1a4)
 
-Yükleme bittikten sonra sizden "Sepolia RPC" isteyecek, kayıt olduğumuz alchemy sitesine gidip endpointe tıklayalım.("My Apps" kısmında birşey yoksa sağ tarafta "Create New App" yazıyor ona tıklayıp oluşturun)
+Yükleme bittikten sonra sizden "Sepolia RPC" isteyecek, kayıt olduğumuz alchemy sitesine gidip endpointe tıklayalım.Diğer sitelerden de benzer şekilde Sepolia RPC'leri alın.("My Apps" kısmında birşey yoksa sağ tarafta "Create New App" yazıyor ona tıklayıp oluşturun)
 
 ![image](https://github.com/user-attachments/assets/c6dd0a5a-bc30-4d46-a208-7af771987a5b) 
 
@@ -65,15 +65,6 @@ Screen'e girelim
 
 ```
 screen -r aztec
-```
-
-> Bu adımda screen açılmıyorsa "There is no screen to be resumed." yazıyorsa aşağıdaki 2 kodu girin.(screen açılırsa bu adımı atlayın.)
-
-```
-screen -S aztec
-```
-```
-wget https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/run-node.sh && chmod +x run-node.sh && ./run-node.sh
 ```
 
 ![image](https://github.com/user-attachments/assets/2a055eb6-53bd-46db-ba4c-9b63e59b2d1a)
