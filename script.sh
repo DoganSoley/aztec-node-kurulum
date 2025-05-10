@@ -93,7 +93,7 @@ if command -v aztec >/dev/null 2>&1; then
 else
   echo -e "${RED}❌ PATH değişkeni şu anda aktif değil. Terminali kapatıp tekrar açman gerekebilir.${NC}"
   echo -e
-  echo -e "${RED}❌ Eğer bu hatayı görüyorsan sunucudan çıkıp tekar geri bağlan ve "bash ~/script.sh" bu kodu çalıştırıp devam et.${NC}"
+  echo -e "${RED}❌ Eğer bu hatayı görüyorsan sunucudan çıkıp tekar geri bağlan ve bu kodu çalıştır : bash ~/script.sh ${NC}"
 fi
 
 
