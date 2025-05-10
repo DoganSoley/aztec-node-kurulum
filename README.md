@@ -23,7 +23,7 @@ Ubuntu 22.04
 
 Daha sonra [Alchemy](https://dashboard.alchemy.com/) , [Infura](http://infura.io/) ve [Quicknode](https://www.quicknode.com/) sitesine kayıt olup 3'ünden de Sepolia RPC alalım.
 
-Ücretli RPC için [dRpc](https://drpc.org/) kullanabilirsiniz.Hem Sepolia hem Beacon için.
+Ücretli RPC için [dRPC](https://drpc.org/) kullanabilirsiniz.Hem Sepolia hem Beacon için.
 
 Sonrasında Aztec'in [Discord](https://discord.com/invite/aztec) kanalına girelim.
 
