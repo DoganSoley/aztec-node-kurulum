@@ -79,13 +79,22 @@ systemctl restart docker
 echo "⬇️ Aztec CLI Yükleniyor.."
 bash -i <(curl -s https://install.aztec.network)
 
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
 
-# PATH'e aztec bin klasörü ekleniyor (kalıcı)
+# Kalıcı olarak 3 profile yaz
 echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.profile
+
+# Anlık terminal oturumuna da ekle
 export PATH="$HOME/.aztec/bin:$PATH"
+
+# Aztec komutu şimdi erişilebilir mi?
+if command -v aztec >/dev/null 2>&1; then
+  echo -e "✅ ${GREEN}Aztec CLI başarılı şekilde terminalde tanındı.${NC}"
+else
+  echo -e "❌ ${RED}Aztec CLI hala tanınmıyor. Oturumu kapatıp yeniden açman gerekebilir.${NC}"
+fi
+
 
 
 echo "🔄 Aztec güncel versiyon yükleniyor.."
