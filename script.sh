@@ -116,6 +116,22 @@ aztec start --node --archiver --sequencer \
   --p2p.p2pIp \"$P2P_IP\" | tee ~/aztec-log.txt
 "
 
+# --------------------------
+# VALIDATOR SCRIPT İNDİRME
+# --------------------------
+
+echo "📥 Validator kayıt scripti indiriliyor..."
+wget -O ~/validator.sh https://raw.githubusercontent.com/DoganSoley/aztec-node-kurulum/refs/heads/main/validator.sh
+
+if [[ -f ~/validator.sh ]]; then
+  chmod +x ~/validator.sh
+  echo "✅ validator.sh başarıyla indirildi ve çalıştırılabilir hale getirildi."
+  echo "📌 Çalıştırmak için: ${YELLOW}bash ~/validator.sh${NC}"
+else
+  echo -e "${RED}❌ validator.sh dosyası indirilemedi. Bağlantıyı kontrol edin.${NC}"
+fi
+
+
 echo " "
 echo " "
 echo " "
