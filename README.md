@@ -14,7 +14,7 @@ SSD : 100GB+
 
 Ubuntu 22.04
 
-# ÖNEMLİ ! Videodan sonra bazı değişiklikler oldu videodan farklı giden yerlerde lütfen rehberi okuyarak takip edin !
+# ÖNEMLİ ! Videodan sonra bazı değişiklikler oldu videodan farklı giden yerlerde lütfen rehberi okuyarak takip edin, ücretsiz RPC'ler bir süre sonra kota dolduğu için hata veriyor uzun süreli çalıştıracaksanız ücretli RPC şart.
 
 ## Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
 
