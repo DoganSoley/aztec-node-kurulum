@@ -14,8 +14,7 @@ SSD : 100GB+
 
 Ubuntu 22.04
 
-# ÖNEMLİ ! 
-# Videodan sonra bazı değişiklikler oldu videodan farklı giden yerlerde lütfen rehberi okuyarak takip edin !
+# ÖNEMLİ ! Videodan sonra bazı değişiklikler oldu videodan farklı giden yerlerde lütfen rehberi okuyarak takip edin !
 
 ## Kuruluma Başlamadan Önce Yapılacak Hazırlıklar
 
