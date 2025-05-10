@@ -79,12 +79,9 @@ systemctl restart docker
 echo "⬇️ Aztec CLI Yükleniyor.."
 bash -i <(curl -s https://install.aztec.network)
 
-# Firewall
 ufw allow 22
 ufw allow ssh
 ufw enable
-
-# Sequencer
 ufw allow 40400
 ufw allow 8080
 
