@@ -4,13 +4,14 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
 NC='\033[0m'
 
 echo -e "${BLUE}🛡️  Aztec Validator Kayıt İşlemi Başlatılıyor${NC}"
 
 # Kullanıcıdan bilgileri al
-read -p "🌐 Sepolia RPC girin: " RPC_URL
-read -p "🔐 Metamask özel anahtarınızı girin: " RAW_KEY
+read -p "🌐 Sepolia RPC bağlantı adresinizi girin: " RPC_URL
+read -p "🔐 Metamask özel anahtarınızı girin (0x ile başlayabilir veya başlamayabilir): " RAW_KEY
 read -p "📬 Metamask cüzdan adresinizi girin: " VALIDATOR_ADDRESS
 
 # Private key'e 0x ekle (yoksa)
@@ -35,9 +36,10 @@ OUTPUT=$(aztec add-l1-validator \
   --staking-asset-handler "$STAKING_HANDLER" \
   --l1-chain-id "$CHAIN_ID" 2>&1)
 
+# Loga kaydet
 echo "$OUTPUT" > ~/aztec-validator-log.txt
 
-# Günlük kayıt limiti dolmuş mu kontrol et
+# Quota hatası varsa
 if echo "$OUTPUT" | grep -q "ValidatorQuotaFilledUntil"; then
   TIMESTAMP=$(echo "$OUTPUT" | grep -oP 'ValidatorQuotaFilledUntil\(\K[0-9]+')
   NOW=$(date +%s)
@@ -51,6 +53,18 @@ if echo "$OUTPUT" | grep -q "ValidatorQuotaFilledUntil"; then
   else
     echo -e "${RED}⛔ Kayıt şu anda mümkün değil, ancak tekrar denenebilir.${NC}"
   fi
-else
+
+# RPC limiti dolduysa
+elif echo "$OUTPUT" | grep -qi "Monthly capacity limit exceeded"; then
+  echo -e "${RED}⛔ RPC sağlayıcınızın aylık kullanım kotası dolmuş. Kayıt başarısız oldu.${NC}"
+  echo -e "🔄 Yeni bir RPC bağlantısı ile tekrar deneyin."
+
+# Gerçek kayıt başarılı mı kontrol et
+elif echo "$OUTPUT" | grep -q "Successfully added L1 validator"; then
   echo -e "\n${GREEN}✅ Validatör kaydı başarılı!${NC}"
+
+# Başka bir hata olmuşsa ama sessiz geçmişse
+else
+  echo -e "${RED}⛔ Kayıt komutu çalıştı fakat doğrulama yapılamadı.${NC}"
+  echo -e "❌ Büyük ihtimalle kayıt başarısız oldu."
 fi
