@@ -79,20 +79,21 @@ systemctl restart docker
 echo "⬇️ Aztec CLI Yükleniyor.."
 bash -i <(curl -s https://install.aztec.network)
 
-
-# Kalıcı olarak 3 profile yaz
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.profile
-
-# Anlık terminal oturumuna da ekle
+# Anlık terminal için export
 export PATH="$HOME/.aztec/bin:$PATH"
 
-# Aztec komutu şimdi erişilebilir mi?
+# Kalıcı olarak .bashrc, .profile ve .bash_profile dosyalarına yaz
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.profile
+echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile
+
+# Anında çalışıp çalışmadığını test et
 if command -v aztec >/dev/null 2>&1; then
-  echo -e "✅ ${GREEN}Aztec CLI başarılı şekilde terminalde tanındı.${NC}"
+  echo "✅ Aztec CLI aktif! Komutlar kullanılabilir."
 else
-  echo -e "❌ ${RED}Aztec CLI hala tanınmıyor. Oturumu kapatıp yeniden açman gerekebilir.${NC}"
+  echo -e "${RED}❌ PATH değişkeni şu anda aktif değil. Terminali kapatıp tekrar açman gerekebilir.${NC}"
+  echo -e
+  echo -e "${RED}❌ Eğer bu hatayı görüyorsan sunucudan çıkıp tekar geri bağlan ve "bash ~/script.sh" bu kodu çalıştırıp devam et.${NC}"
 fi
 
 
