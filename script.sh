@@ -28,7 +28,7 @@ echo " "
 # --------------------------
 
 echo "🚀 Sistem güncelleniyor ve temel bağımlılıklar yükleniyor..."
-apt-get update && apt-get upgrade -y
+apt-get update && apt-get upgrade -y && apt-get install -y ufw
 
 echo "📦 Gerekli tüm paketler yükleniyor..."
 apt-get install -y \
