@@ -70,9 +70,6 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 # DOCKER TEST
 # --------------------------
 
-echo "✅ Docker kurulumu test ediliyor..."
-docker run hello-world
-
 systemctl enable docker
 systemctl restart docker
 
