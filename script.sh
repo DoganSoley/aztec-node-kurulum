@@ -81,7 +81,7 @@ ufw allow 8080
 
 echo "⬇️ Aztec CLI Yükleniyor.."
 
-bash -i <(curl -s https://install.aztec.network)
+curl -fsSL https://install.aztec.network | bash
 
 export PATH="$HOME/.aztec/bin:$PATH"
 
