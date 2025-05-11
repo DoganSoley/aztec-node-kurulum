@@ -28,56 +28,14 @@ echo " "
 # --------------------------
 
 echo "🚀 Sistem güncelleniyor ve temel bağımlılıklar yükleniyor..."
-apt-get update && apt-get upgrade -y
+sudo apt update && sudo apt install curl wget screen jq -y
 
-echo "📦 Gerekli tüm paketler yükleniyor..."
-apt-get install -y \
-  curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf \
-  tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang \
-  bsdmainutils ncdu unzip libleveldb-dev screen ca-certificates gnupg lsb-release \
-  software-properties-common apt-transport-https
-
-# --------------------------
-# VARSA ESKİ DOCKER KURULUMLARINI TEMİZLE
-# --------------------------
-
-echo "🧹 Önceki Docker sürümleri kaldırılıyor (varsa)..."
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
-  apt-get remove -y $pkg
-done
-
-# --------------------------
-# RESMİ DOCKER KURULUMU
-# --------------------------
-
-echo "🐳 Resmi Docker deposu ayarlanıyor..."
-
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
-  | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-chmod a+r /etc/apt/keyrings/docker.gpg
-
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
-  https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
-  > /etc/apt/sources.list.d/docker.list
-
-apt-get update -y && apt-get upgrade -y
-
-apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# --------------------------
-# DOCKER TEST
-# --------------------------
-
-echo "✅ Docker kurulumu test ediliyor..."
-docker run hello-world
-
-systemctl enable docker
-systemctl restart docker
-
-echo "⬇️ Aztec CLI Yükleniyor.."
-bash -i <(curl -s https://install.aztec.network)
+if ! command -v docker &> /dev/null; then
+  echo -e "${ORANGE}Docker bulunamadı, kurulum başlatılıyor...${RESET}"
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sh get-docker.sh
+  rm get-docker.sh
+fi
 
 ufw allow 22
 ufw allow ssh
@@ -85,24 +43,10 @@ ufw enable
 ufw allow 40400
 ufw allow 8080
 
-# Anlık terminal için export
+echo "⬇️ Aztec CLI Yükleniyor.."
+
+curl -fsSL https://install.aztec.network | bash
 export PATH="$HOME/.aztec/bin:$PATH"
-
-# Kalıcı olarak .bashrc, .profile ve .bash_profile dosyalarına yaz
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.profile
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile
-
-# Anında çalışıp çalışmadığını test et
-if command -v aztec >/dev/null 2>&1; then
-  echo "✅ Aztec CLI aktif! Komutlar kullanılabilir."
-else
-  echo -e "${RED}❌ PATH değişkeni şu anda aktif değil. Terminali kapatıp tekrar açman gerekebilir.${NC}"
-  echo -e
-  echo -e "${RED}❌ Eğer bu hatayı görüyorsan sunucudan çıkıp tekar geri bağlan ve bu kodu çalıştır : bash ~/script.sh ${NC}"
-fi
-
-
 
 echo "🔄 Aztec güncel versiyon yükleniyor.."
 aztec-up alpha-testnet
