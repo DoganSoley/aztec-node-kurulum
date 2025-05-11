@@ -121,6 +121,19 @@ else
   echo "✅ Beacon RPC olarak şu kullanılacak: $L1_CONSENSUS_HOST_URLS"
 fi
 
+echo "🧱 Node 'aztec' isimli screen içinde başlatılıyor..."
+
+screen -dmS aztec bash -c "
+aztec start --node --archiver --sequencer \
+  --network alpha-testnet \
+  --l1-rpc-urls \"$ETHEREUM_HOSTS\" \
+  --l1-consensus-host-urls \"$L1_CONSENSUS_HOST_URLS\" \
+  --sequencer.validatorPrivateKey \"$VALIDATOR_PRIVATE_KEY\" \
+  --sequencer.coinbase \"$COINBASE\" \
+  --p2p.p2pIp \"$P2P_IP\" | tee ~/aztec-log.txt
+"
+
+
 
 # --------------------------
 # VALIDATOR SCRIPT İNDİRME
