@@ -28,7 +28,7 @@ echo " "
 # --------------------------
 
 echo "🚀 Sistem güncelleniyor ve temel bağımlılıklar yükleniyor..."
-sudo apt update && sudo apt install curl wget screen jq -y
+sudo apt update && sudo apt install curl wget screen jq ufw -y
 
 if ! command -v docker &> /dev/null; then
   echo -e "${ORANGE}Docker bulunamadı, kurulum başlatılıyor...${RESET}"
