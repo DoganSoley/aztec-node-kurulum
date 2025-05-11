@@ -28,14 +28,53 @@ echo " "
 # --------------------------
 
 echo "🚀 Sistem güncelleniyor ve temel bağımlılıklar yükleniyor..."
-sudo apt update && sudo apt install curl wget screen jq ufw -y
+apt-get update && apt-get upgrade -y
 
-if ! command -v docker &> /dev/null; then
-  echo -e "${ORANGE}Docker bulunamadı, kurulum başlatılıyor...${RESET}"
-  curl -fsSL https://get.docker.com -o get-docker.sh
-  sh get-docker.sh
-  rm get-docker.sh
-fi
+echo "📦 Gerekli tüm paketler yükleniyor..."
+apt-get install -y \
+  curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf \
+  tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang \
+  bsdmainutils ncdu unzip libleveldb-dev screen ca-certificates gnupg lsb-release \
+  software-properties-common apt-transport-https
+
+# --------------------------
+# VARSA ESKİ DOCKER KURULUMLARINI TEMİZLE
+# --------------------------
+
+echo "🧹 Önceki Docker sürümleri kaldırılıyor (varsa)..."
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
+  apt-get remove -y $pkg
+done
+
+# --------------------------
+# RESMİ DOCKER KURULUMU
+# --------------------------
+
+echo "🐳 Resmi Docker deposu ayarlanıyor..."
+
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+  | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
+  > /etc/apt/sources.list.d/docker.list
+
+apt-get update -y && apt-get upgrade -y
+
+apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# --------------------------
+# DOCKER TEST
+# --------------------------
+
+echo "✅ Docker kurulumu test ediliyor..."
+docker run hello-world
+
+systemctl enable docker
+systemctl restart docker
 
 ufw allow 22
 ufw allow ssh
